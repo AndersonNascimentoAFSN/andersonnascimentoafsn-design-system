@@ -1,7 +1,11 @@
 {
-  "name": "@clarivus/design-system",
+  "name": "@andersonnascimentoafsn/design-system",
   "version": "0.1.0",
-  "description": "Sistema de design Clarivus - Biblioteca de componentes React",
+  "author": {
+    "name": "Anderson Nascimento",
+    "email": "anderson.nascimento@meta.com.br"
+  },
+  "description": "Sistema de design Anderson Nascimento - Biblioteca de componentes React",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -74,11 +78,10 @@
     "react",
     "components",
     "ui",
-    "clarivus",
+    "Anderson Nascimento",
     "typescript"
   ],
-  "author": "Clarivus",
-  "license": "MIT",
+  "license": "Proprietary",
   "repository": {
     "type": "git",
     "url": "https://github.com/empreendedor/design-system.git"
