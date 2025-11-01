@@ -84,12 +84,12 @@
   "license": "Proprietary",
   "repository": {
     "type": "git",
-    "url": "https://github.com/empreendedor/design-system.git"
+    "url": "https://github.com/AndersonNascimentoAFSN/andersonnascimentoafsn-design-system.git"
   },
   "bugs": {
-    "url": "https://github.com/empreendedor/design-system/issues"
+    "url": "https://github.com/AndersonNascimentoAFSN/andersonnascimentoafsn-design-system/issues"
   },
-  "homepage": "https://github.com/empreendedor/design-system#readme",
+  "homepage": "https://github.com/AndersonNascimentoAFSN/andersonnascimentoafsn-design-system#readme",
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
