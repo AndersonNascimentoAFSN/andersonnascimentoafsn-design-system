@@ -83,11 +83,60 @@ pnpm run build
    ```
 
 5. **Commit your changes** using [Conventional Commits](https://www.conventionalcommits.org/):
-   ```bash
-   git commit -m "feat: add new Button variant"
-   git commit -m "fix: resolve focus ring issue in Button"
-   git commit -m "docs: update README with new examples"
+   
+   The project uses **Husky** and **Commitlint** to enforce conventional commit messages.
+   
+   **Commit Message Format:**
    ```
+   <type>(<scope>): <subject>
+   
+   <body>
+   
+   <footer>
+   ```
+   
+   **Types:**
+   - `feat`: New feature
+   - `fix`: Bug fix
+   - `docs`: Documentation only
+   - `style`: Code style/formatting (no code change)
+   - `refactor`: Code refactoring
+   - `perf`: Performance improvement
+   - `test`: Adding or updating tests
+   - `build`: Build system or dependencies
+   - `ci`: CI/CD configuration
+   - `chore`: Other changes (no src/test modification)
+   - `revert`: Revert a previous commit
+   
+   **Examples:**
+   ```bash
+   # Feature with scope
+   git commit -m "feat(button): add gradient variant"
+   
+   # Bug fix
+   git commit -m "fix: resolve focus ring issue in Button"
+   
+   # Documentation
+   git commit -m "docs: update README with new examples"
+   
+   # Breaking change
+   git commit -m "feat!: redesign Button API
+   
+   BREAKING CHANGE: Button now requires variant prop"
+   
+   # Multiple scopes
+   git commit -m "refactor(button,input): improve accessibility"
+   ```
+   
+   **Rules:**
+   - Header max length: 100 characters
+   - Subject min length: 3 characters
+   - Use lowercase for type and scope
+   - Subject should be imperative mood ("add" not "added")
+   
+   **Git Hooks:**
+   - `pre-commit`: Runs lint, type-check, and tests
+   - `commit-msg`: Validates commit message format
 
 6. **Push and create a Pull Request**
 

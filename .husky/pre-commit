@@ -1,0 +1,12 @@
+echo "🔍 Running pre-commit checks..."
+
+echo "📝 Linting..."
+pnpm run lint || exit 1
+
+echo "🔍 Type checking..."
+pnpm run type-check || exit 1
+
+echo "🧪 Running tests..."
+pnpm test || exit 1
+
+echo "✅ All checks passed!"

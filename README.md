@@ -196,6 +196,22 @@ pnpm build
 pnpm type-check
 ```
 
+### Commits
+
+Este projeto usa [Conventional Commits](https://www.conventionalcommits.org/) com validação automática via Husky e Commitlint.
+
+```bash
+# Formato
+git commit -m "type(scope): subject"
+
+# Exemplos
+git commit -m "feat(button): add new variant"
+git commit -m "fix: resolve accessibility issue"
+git commit -m "docs: update installation guide"
+```
+
+Veja [CONTRIBUTING.md](CONTRIBUTING.md) para mais detalhes sobre tipos de commit e regras.
+
 ## 📚 Documentação
 
 Acesse a documentação completa no [Storybook](https://seu-storybook-url.com)

@@ -23,8 +23,8 @@ export const DESIGN_TOKENS_VERSION = '1.0.0';
  * ```
  */
 export function isTokenVersionCompatible(minVersion: string): boolean {
-  const [currentMajor] = DESIGN_TOKENS_VERSION.split('.').map(Number);
-  const [minMajor] = minVersion.split('.').map(Number);
+  const currentMajor = Number(DESIGN_TOKENS_VERSION.split('.')[0]);
+  const minMajor = Number(minVersion.split('.')[0]);
   
   return currentMajor >= minMajor;
 }
