@@ -1,6 +1,6 @@
 /**
  * Design Tokens - Typography
- * Sistema tipográfico do Clarivus Design System
+ * Sistema tipográfico do andersonnascimentoafsn Design System
  */
 
 export const typography = {

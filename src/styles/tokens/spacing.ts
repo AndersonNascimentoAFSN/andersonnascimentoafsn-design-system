@@ -1,6 +1,6 @@
 /**
  * Design Tokens - Spacing
- * Sistema de espaçamento do Clarivus Design System
+ * Sistema de espaçamento do andersonnascimentoafsn Design System
  */
 
 export const spacing = {

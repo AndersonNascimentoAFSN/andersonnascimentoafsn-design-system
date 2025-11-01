@@ -84,7 +84,7 @@
     "component-library",
     "react-components"
   ],
-  "license": "MIT",
+  "license": "Proprietary",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

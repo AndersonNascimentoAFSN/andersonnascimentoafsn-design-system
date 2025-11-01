@@ -7,8 +7,8 @@ import { buttonVariants } from './variants';
 import { ButtonProps } from './types';
 
 /**
- * Clarivus Button Component
- * Sistema completo de botões do Clarivus Design System
+ * andersonnascimentoafsn Button Component
+ * Sistema completo de botões do andersonnascimentoafsn Design System
  * 
  * Variantes: Primary, Secondary, Accent, Success, Warning, Error, Ghost, Outline, Link
  * Tamanhos: sm, md, lg, xl

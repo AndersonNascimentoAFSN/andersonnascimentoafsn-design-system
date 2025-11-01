@@ -1,6 +1,6 @@
 /**
  * Design Tokens - Colors
- * Sistema de cores do Clarivus Design System
+ * Sistema de cores do andersonnascimentoafsn Design System
  */
 
 export const colors = {
