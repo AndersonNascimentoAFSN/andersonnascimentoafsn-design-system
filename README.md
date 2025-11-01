@@ -1,149 +1,180 @@
-# Clarivus Design System
+# Design System
 
-> Sistema de design completo e profissional desenvolvido com React, TypeScript e Vite
+> Sistema de design moderno desenvolvido com React, TypeScript, Tailwind CSS 4 e Radix UI
 
-[![NPM Version](https://img.shields.io/npm/v/@clarivus/design-system)](https://www.npmjs.com/package/@clarivus/design-system)
+[![NPM Version](https://img.shields.io/npm/v/@andersonnascimentoafsn/design-system)](https://www.npmjs.com/package/@andersonnascimentoafsn/design-system)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 🚀 Características
 
 - ⚡️ **Vite** - Build ultra-rápido e otimizado
-- 🎨 **Design Tokens** - Sistema completo de cores, espaçamento e tipografia
-- 🧪 **Vitest** - Testes unitários com React Testing Library
+- 🎨 **Tailwind CSS 4** - Sistema completo de design tokens usando @theme
+- 🧩 **Radix UI** - Componentes acessíveis e sem estilo
+- 🎯 **Class Variance Authority (CVA)** - Gerenciamento de variantes
+- 🧪 **Vitest** - Testes unitários com React Testing Library (35+ testes)
 - 📚 **Storybook** - Documentação interativa de componentes
 - 🎯 **TypeScript** - Type-safety completo
-- 🎭 **CSS Modules** - Estilos isolados e performáticos
 - 📦 **Tree-shakeable** - Importe apenas o que você precisa
 
 ## 📦 Instalação
 
 ```bash
-npm install @clarivus/design-system
+npm install @andersonnascimentoafsn/design-system
 # ou
-pnpm add @clarivus/design-system
+pnpm add @andersonnascimentoafsn/design-system
 # ou
-yarn add @clarivus/design-system
+yarn add @andersonnascimentoafsn/design-system
 ```
 
+> **Nota:** Este pacote requer React 18+ e Tailwind CSS 4+ como peer dependencies.
+
 ## 🎯 Uso
+
+### Setup Inicial
+
+Importe o CSS do design system no seu arquivo principal:
+
+```tsx
+// main.tsx ou App.tsx
+import '@andersonnascimentoafsn/design-system/style.css';
+```
 
 ### Importando componentes
 
 ```tsx
-import { Button, Card, Input } from '@clarivus/design-system';
-import '@clarivus/design-system/style.css';
+import { Button } from '@andersonnascimentoafsn/design-system';
 
 function App() {
   return (
-    <Card variant="elevated" padding="lg">
-      <h1>Bem-vindo ao Clarivus</h1>
-      <Input label="Email" type="email" fullWidth />
+    <div>
+      <h1>Bem-vindo!</h1>
       <Button variant="primary" size="lg">
-        Enviar
+        Começar
       </Button>
-    </Card>
+    </div>
   );
 }
 ```
 
 ### Usando Design Tokens
 
-```tsx
-import { colors, spacing, typography } from '@clarivus/design-system';
+Os tokens estão disponíveis como classes Tailwind CSS:
 
-const styles = {
-  container: {
-    padding: spacing.lg,
-    backgroundColor: colors.primary[500],
-    fontFamily: typography.fontFamily.primary,
-  },
-};
+```tsx
+<div className="bg-primary-500 text-white p-spacing-lg rounded-radius-md shadow-shadow-md">
+  Conteúdo estilizado com design tokens
+</div>
 ```
 
 ## 🎨 Componentes
 
 ### Button
 
-Botão com múltiplas variantes e tamanhos.
+Botão versátil com múltiplas variantes, tamanhos e estados. Construído com Radix UI Slot para composição flexível.
 
 ```tsx
+import { Button } from '@andersonnascimentoafsn/design-system';
+
 <Button variant="primary" size="md" loading={false}>
   Clique aqui
 </Button>
 ```
 
-**Props:**
-- `variant`: `'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'`
-- `size`: `'sm' | 'md' | 'lg'`
-- `loading`: `boolean`
-- `fullWidth`: `boolean`
+**Variantes disponíveis:**
+- `primary` - Botão principal (azul)
+- `secondary` - Botão secundário (roxo)
+- `success` - Sucesso (verde)
+- `warning` - Aviso (laranja)
+- `danger` - Perigo (vermelho)
+- `outline` - Contornado
+- `ghost` - Sem fundo
+- `link` - Estilo de link
+- `gradient` - Com gradiente
 
-### Card
+**Tamanhos:**
+- `xs` - Extra pequeno
+- `sm` - Pequeno
+- `md` - Médio (padrão)
+- `lg` - Grande
+- `xl` - Extra grande
 
-Container versátil com header, body e footer.
-
-```tsx
-<Card variant="elevated" padding="lg">
-  <CardHeader>Título</CardHeader>
-  <CardBody>Conteúdo do card</CardBody>
-  <CardFooter>
-    <Button>Ação</Button>
-  </CardFooter>
-</Card>
-```
-
-**Props:**
-- `variant`: `'default' | 'bordered' | 'elevated'`
-- `padding`: `'none' | 'sm' | 'md' | 'lg'`
-
-### Input
-
-Campo de entrada com label e validação.
-
-```tsx
-<Input
-  label="Nome"
-  placeholder="Digite seu nome"
-  error="Campo obrigatório"
-  fullWidth
-/>
-```
-
-**Props:**
-- `label`: `string`
-- `error`: `string`
-- `helperText`: `string`
-- `hasError`: `boolean`
-- `fullWidth`: `boolean`
+**Props principais:**
+- `variant`: Variante visual do botão
+- `size`: Tamanho do botão
+- `loading`: Exibe indicador de carregamento
+- `disabled`: Desabilita o botão
+- `asChild`: Usa Radix Slot para composição
+- Todos os atributos HTML padrão de `<button>`
 
 ## 🎨 Design Tokens
 
+O design system utiliza Tailwind CSS 4 com tokens definidos via `@theme` directive. Todos os tokens estão disponíveis como classes CSS.
+
 ### Cores
 
-```ts
-colors.primary[500]  // Azul principal
-colors.success[500]  // Verde de sucesso
-colors.error[500]    // Vermelho de erro
-colors.warning[500]  // Laranja de aviso
-colors.gray[500]     // Cinza neutro
+```tsx
+// Primárias (Azul)
+<div className="bg-primary-500 text-primary-50" />
+
+// Sucesso (Verde)
+<div className="bg-success-500 border-success-600" />
+
+// Erro (Vermelho)
+<div className="bg-error-500 text-error-50" />
+
+// Aviso (Laranja)
+<div className="bg-warning-500" />
+
+// Neutros (Cinza)
+<div className="bg-gray-100 text-gray-900" />
 ```
+
+**Escalas disponíveis:** 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
 
 ### Espaçamento
 
-```ts
-spacing.xs   // 4px
-spacing.sm   // 8px
-spacing.md   // 16px
-spacing.lg   // 24px
-spacing.xl   // 32px
+```tsx
+<div className="p-spacing-xs" />   // 4px
+<div className="m-spacing-sm" />   // 8px
+<div className="gap-spacing-md" /> // 16px
+<div className="p-spacing-lg" />   // 24px
+<div className="m-spacing-xl" />   // 32px
 ```
 
 ### Tipografia
 
-```ts
-typography.fontSize.h1      // 36px
-typography.fontSize.base    // 16px
-typography.fontWeight.bold  // 700
+```tsx
+// Tamanhos
+<h1 className="text-size-h1" />     // 36px
+<p className="text-size-base" />    // 16px
+<small className="text-size-sm" />  // 14px
+
+// Pesos
+<span className="font-weight-bold" />    // 700
+<span className="font-weight-medium" />  // 500
+<span className="font-weight-regular" /> // 400
+
+// Famílias
+<p className="font-family-primary" />   // Rubik
+<code className="font-family-mono" />   // monospace
+```
+
+### Outros Tokens
+
+```tsx
+// Border Radius
+<div className="rounded-radius-sm" />  // 4px
+<div className="rounded-radius-md" />  // 8px
+<div className="rounded-radius-lg" />  // 12px
+
+// Shadows
+<div className="shadow-shadow-sm" />
+<div className="shadow-shadow-md" />
+<div className="shadow-shadow-lg" />
+
+// Z-index
+<div className="z-zindex-dropdown" />   // 1000
+<div className="z-zindex-modal" />      // 1300
 ```
 
 ## 🧪 Desenvolvimento
@@ -173,12 +204,19 @@ Acesse a documentação completa no [Storybook](https://seu-storybook-url.com)
 
 Contribuições são bem-vindas! Por favor, leia o [CONTRIBUTING.md](CONTRIBUTING.md) para detalhes.
 
-## 📄 Licença
+## �️ Requisitos Técnicos
 
-MIT © Clarivus
+- **Node.js**: >=18.0.0
+- **pnpm**: >=8.0.0 (recomendado)
+- **React**: ^18.3.0
+- **Tailwind CSS**: ^4.0.0
+
+## �📄 Licença
+
+MIT © 2025 Anderson Nascimento
 
 ## 🔗 Links
 
-- [NPM](https://www.npmjs.com/package/@clarivus/design-system)
+- [NPM](https://www.npmjs.com/package/@andersonnascimentoafsn/design-system)
 - [GitHub](https://github.com/empreendedor/design-system)
-- [Documentação](https://seu-storybook-url.com)
+- [Issues](https://github.com/empreendedor/design-system/issues)

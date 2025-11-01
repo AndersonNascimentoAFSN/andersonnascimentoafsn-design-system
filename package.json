@@ -22,18 +22,16 @@
     "dist"
   ],
   "scripts": {
+    "build": "tsc --build --force && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
     "dev": "storybook dev -p 6006",
-    "build": "tsc && vite build",
-    "build:watch": "vite build --watch",
+    "build-storybook": "storybook build",
+    "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "type-check": "tsc --noEmit",
-    "preview": "vite preview"
+    "prepublishOnly": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run build"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -78,10 +76,23 @@
     "react",
     "components",
     "ui",
-    "Anderson Nascimento",
-    "typescript"
+    "tailwind",
+    "tailwindcss",
+    "typescript",
+    "vite",
+    "radix-ui",
+    "component-library",
+    "react-components"
   ],
-  "license": "Proprietary",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/AndersonNascimentoAFSN/andersonnascimentoafsn-design-system.git"
