@@ -7,12 +7,39 @@ import { buttonVariants } from './variants';
 import { ButtonProps } from './types';
 
 /**
- * andersonnascimentoafsn Button Component
- * Sistema completo de botões do andersonnascimentoafsn Design System
+ * Button Component
  * 
- * Variantes: Primary, Secondary, Accent, Success, Warning, Error, Ghost, Outline, Link
- * Tamanhos: sm, md, lg, xl
- * Estados: Default, Hover, Active, Disabled, Loading
+ * A versatile button component with multiple variants, sizes, and states.
+ * Built with accessibility in mind using Radix UI Slot for composition.
+ * 
+ * @example
+ * ```tsx
+ * // Primary button
+ * <Button variant="primary" size="md">
+ *   Click me
+ * </Button>
+ * 
+ * // Loading state
+ * <Button loading>
+ *   Loading...
+ * </Button>
+ * 
+ * // With icon
+ * <Button icon={<Icon />}>
+ *   Button with icon
+ * </Button>
+ * 
+ * // As child (composition with Radix Slot)
+ * <Button asChild>
+ *   <a href="/link">Link as button</a>
+ * </Button>
+ * ```
+ * 
+ * @param {ButtonProps} props - Component props
+ * @param {React.Ref} ref - Forwarded ref to button element
+ * 
+ * @see {@link ButtonProps} for all available props
+ * @see {@link https://www.radix-ui.com/primitives/docs/utilities/slot Radix UI Slot}
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, loading, icon, children, disabled, ...props }, ref) => {

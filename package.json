@@ -23,6 +23,8 @@
   ],
   "scripts": {
     "build": "tsc --build --force && vite build",
+    "build:analyze": "pnpm run build && pnpm run size",
+    "size": "du -sh dist/* && echo '\n=== Gzipped sizes ===' && gzip -c dist/index.js | wc -c | awk '{printf \"index.js: %.2f KB\\n\", $1/1024}' && gzip -c dist/design-system.css | wc -c | awk '{printf \"design-system.css: %.2f KB\\n\", $1/1024}'",
     "lint": "eslint .",
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
@@ -84,7 +86,7 @@
     "component-library",
     "react-components"
   ],
-  "license": "Proprietary",
+  "license": "MIT",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
